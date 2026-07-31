@@ -1,0 +1,11 @@
+{
+  "_comment": "Manually curated regulatory reference dataset (FSSAI Advertising & Claims Regulations, known CCPA rulings). Used by the Reality-Check Agent. Populate with real, sourced entries during development.",
+  "rulings": [
+    {
+      "product_type": "example",
+      "claim_pattern": "100% natural",
+      "ruling_summary": "PLACEHOLDER — replace with a real, sourced CCPA/FSSAI reference",
+      "source": "PLACEHOLDER"
+    }
+  ]
+}
