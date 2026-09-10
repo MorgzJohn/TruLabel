@@ -1,11 +1,70 @@
 {
-  "_comment": "Manually curated regulatory reference dataset (FSSAI Advertising & Claims Regulations, known CCPA rulings). Used by the Reality-Check Agent. Populate with real, sourced entries during development.",
+  "_comment": "Curated regulatory reference dataset based on FSSAI (Advertising and Claims) Regulations 2018 and CCPA Consumer Protection rulings. Used by Reality-Check and Credibility-Weighting Agents.",
+  "regulations": [
+    {
+      "claim_type": "sugar",
+      "claim_pattern": "no added sugar",
+      "regulation_ref": "FSSAI Advertising and Claims Reg. 2018, Schedule I",
+      "criteria": "No added sugars (sucrose, glucose, fructose, syrups, honey).",
+      "threshold_sugars_100g": 5.0,
+      "forbidden_ingredients": ["sugar", "glucose", "fructose", "sucrose", "syrup", "honey", "jaggery", "corn syrup", "maltodextrin"],
+      "source": "fssai_regulation"
+    },
+    {
+      "claim_type": "natural",
+      "claim_pattern": "100% natural",
+      "regulation_ref": "FSSAI Advertising and Claims Reg. 2018, Schedule V",
+      "criteria": "Only single food or natural ingredients without additives or artificial chemical processing.",
+      "max_additives": 0,
+      "source": "fssai_regulation"
+    },
+    {
+      "claim_type": "additives",
+      "claim_pattern": "no preservatives",
+      "regulation_ref": "FSSAI Advertising and Claims Reg. 2018, Reg 4(5)",
+      "criteria": "Product must contain zero added preservatives or artificial additives.",
+      "max_additives": 0,
+      "source": "fssai_regulation"
+    },
+    {
+      "claim_type": "allergen",
+      "claim_pattern": "gluten-free",
+      "regulation_ref": "FSSAI (Food Products Standards & Food Additives) Reg. 2011 & Claims 2018",
+      "criteria": "Gluten content < 20 mg/kg; ingredients must not contain gluten-bearing grains without certified processing.",
+      "forbidden_ingredients": ["wheat", "barley", "rye", "malt", "gluten"],
+      "source": "fssai_regulation"
+    },
+    {
+      "claim_type": "nutrition",
+      "claim_pattern": "low fat",
+      "regulation_ref": "FSSAI Advertising and Claims Reg. 2018, Schedule I",
+      "criteria": "Fat content must not exceed 3g per 100g for solids.",
+      "max_fat_100g": 3.0,
+      "source": "fssai_regulation"
+    },
+    {
+      "claim_type": "nutrition",
+      "claim_pattern": "high protein",
+      "regulation_ref": "FSSAI Advertising and Claims Reg. 2018, Schedule I",
+      "criteria": "Protein content must provide at least 20% of energy or >= 10g per 100g.",
+      "min_protein_100g": 10.0,
+      "source": "fssai_regulation"
+    }
+  ],
   "rulings": [
     {
-      "product_type": "example",
+      "product_type": "tender_coconut_water",
       "claim_pattern": "100% natural",
-      "ruling_summary": "PLACEHOLDER — replace with a real, sourced CCPA/FSSAI reference",
-      "source": "PLACEHOLDER"
+      "ruling_summary": "CCPA / FSSAI enforcement action against packaged coconut water brands claiming '100% Natural / Raw' while adding bio-preservatives (nisin, citric acid) and added sugars.",
+      "enforcement_standard": "Products containing added additives or sugars cannot claim 100% natural.",
+      "source": "ccpa_ruling"
+    },
+    {
+      "product_type": "immunity_beverages",
+      "claim_pattern": "boosts immunity",
+      "ruling_summary": "CCPA and FSSAI advisory prohibiting misleading generic health and immunity boosting claims on commercial drinks without pre-approved clinical validation.",
+      "enforcement_standard": "Generic 'immunity booster' claims on high-sugar or ultra-processed foods are deemed deceptive unless specific micro-nutrient RDA standards are met.",
+      "source": "ccpa_ruling"
     }
   ]
 }
